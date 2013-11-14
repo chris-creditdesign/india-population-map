@@ -1,3 +1,8 @@
+## TO DO
+with parseInt, you should use the radix so (mynum, 10) for decimals  
+jslint or jshint to check the code for syntax errors etc http://www.jslint.com/ or http://www.jshint.com/  
+
+
 ### Wikipedia entry of density of population by district
 http://en.wikipedia.org/wiki/List_of_districts_of_India
 
