@@ -1,9 +1,33 @@
+# THE PROCESS
+
+Use curl to download the contentl of [http://en.wikipedia.org/wiki/List_of_districts_of_India](http://en.wikipedia.org/wiki/List_of_districts_of_India)  
+
+	curl -O http://en.wikipedia.org/wiki/List_of_districts_of_India
+
+Then give it the html file extension
+
+	mv "List_of_districts_of_India" "List_of_districts_of_India.html"
+
+Download a zip file of containing a prerendered svg from bitbucket via [http://www.s-anand.net/blog/india-district-map/](http://www.s-anand.net/blog/india-district-map/)  
+`districts.svg has has 640 districts (I've no idea what the 641st looks like) and is tagged with the State and District names as titles`
+[https://bitbucket.org/sanand0/districts/get/5fc7249661ec.zip](https://bitbucket.org/sanand0/districts/get/5fc7249661ec.zip)
+
+	curl -O https://bitbucket.org/sanand0/districts/get/5fc7249661ec.zip
+
+Then unzip it:
+
+	unzip 5fc7249661ec.zip
+
+
 ## TO DO
 with parseInt, you should use the radix so (mynum, 10) for decimals  
 jslint or jshint to check the code for syntax errors etc http://www.jslint.com/ or http://www.jshint.com/  
 
+http://www.censusindia.gov.in/2011-prov-results/data_files/india/Final_PPT_2011chapter7.pdf
 
 ### Wikipedia entry of density of population by district
+http://en.wikipedia.org/wiki/List_of_districts_in_India_by_population
+
 http://en.wikipedia.org/wiki/List_of_districts_of_India
 
 ###Population data source
