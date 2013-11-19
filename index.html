@@ -2,10 +2,92 @@
 <meta charset="utf-8">
 <style>
 
-/* CSS goes here. */
+/* Key 
+----------------------------------*/
+.key-holder {
+	position: absolute;
+	width: 250px;
+	bottom: 0px;
+	pointer-events:none;
+}
+
+.key {
+	position: relative;
+	bottom: 0px;
+	/*z-index: 1;*/
+	line-height: 1.2em;
+}
+
+
+.key ul, .key p {
+	margin: 10px 0 0 0;
+}
+
+.key ul.colours li span {
+	width: 12px;
+	height: 12px;
+	border: solid 4px;
+	float: left;
+	margin: -2px 10px 0 0;
+}
+
+.key ul.colours li p {
+	font: 200 12px/1.5 arial, sans-serif;
+	margin: 0; 
+}
+
+.key ul li {
+	list-style-type: none; 
+	overflow: auto;
+}
 
 </style>
 <body>
+
+<div class="key-holder">
+	<div class="key">
+		<ul class="colours">
+			<li><p>Population density (km<sup>2</sup>)</p></li>	
+			<li>
+				<span style="background: #F7F4F9; border-color: #F7F4F9;"></span>
+				<p>100</p>
+			</li>
+			<li>
+				<span style="background: #E7E1EF; border-color: #E7E1EF;"></span>
+				<p>200</p>
+			</li>
+			<li>
+				<span style="background: #D4B9DA; border-color: #D4B9DA;"></span>
+				<p>300</p>
+			</li>
+			<li>
+				<span style="background: #C994C7; border-color: #C994C7;"></span>
+				<p>400</p>
+			</li>
+			<li>
+				<span style="background: #DF65B0; border-color: #DF65B0;"></span>
+				<p>500</p>
+			</li>
+			<li>
+				<span style="background: #E7298A; border-color: #E7298A;"></span>
+				<p>600</p>
+			</li>
+			<li>
+				<span style="background: #CE1256; border-color: #CE1256;"></span>
+				<p>700</p>
+			</li>
+			<li>
+				<span style="background: #980043; border-color: #980043;"></span>
+				<p>800</p>
+			</li>
+			<li>
+				<span style="background: #67001F; border-color: #67001F;"></span>
+				<p>900</p>
+			</li>
+		</ul>
+	</div> <!-- class="key" -->
+</div> <!-- class="key-holder" -->
+
 <div id="results"></div>
 
 
