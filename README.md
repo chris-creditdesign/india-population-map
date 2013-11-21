@@ -162,3 +162,6 @@ The amends are listed in `mismatches.csv` and also below.
 | South  |  South Delhi |
 | Central  |  Central Delhi |
 | PoK  |  Pakistan-occupied Kashmir NO DATA |
+
+## Cross reference
+http://censusindia.gov.in/2011census/censusinfodashboard/index.html
