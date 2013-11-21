@@ -1,4 +1,5 @@
-# India population density by district 2011 cencus
+# India population map
+Popolation density by district 2011 census  
 Info graphic for @naturenews
 
 ## In order to aquire the data
