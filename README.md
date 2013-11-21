@@ -1,4 +1,7 @@
-# THE PROCESS
+# India population density by district 2011 cencus
+Info graphic for @naturenews
+
+## In order to aquire the data
 
 Use curl to download the contentl of [http://en.wikipedia.org/wiki/List_of_districts_of_India](http://en.wikipedia.org/wiki/List_of_districts_of_India)  
 
@@ -19,80 +22,142 @@ Then unzip it:
 	unzip 5fc7249661ec.zip
 
 
-## TO DO
-with parseInt, you should use the radix so (mynum, 10) for decimals  
-jslint or jshint to check the code for syntax errors etc http://www.jslint.com/ or http://www.jshint.com/  
+Copy the the svg content into a the html file `index.html`
 
-http://www.censusindia.gov.in/2011-prov-results/data_files/india/Final_PPT_2011chapter7.pdf
+Unfortunately at this point in is neccessary to make around 140 amends to the SVG so 
+that the distcrict names correspond with Wikipedia to account for alternate spellings, ampersands etc..
+The amends are listed in `mismatches.csv` and also below.
 
-### Wikipedia entry of density of population by district
-http://en.wikipedia.org/wiki/List_of_districts_in_India_by_population
 
-http://en.wikipedia.org/wiki/List_of_districts_of_India
-
-###Population data source
-Census data from:
-[http://www.census2011.co.in/district.php](http://www.census2011.co.in/district.php)
-
-###Map data sources
-
-1. GADM shapefiles including state, district and taluk level boundaries from: [http://www.filefactory.com/file/61su34uudcjz/n/IND_adm_zip](http://www.filefactory.com/file/61su34uudcjz/n/IND_adm_zip)  
-[http://www.gadm.org/download](http://www.gadm.org/download)  
-`These data are freely available for academic and other non-commercial use. Redistribution, or commercial use, is not allowed without prior permission.`
-
-2. Solomon Naveen James's Library
-Merge of 'India District Boundary' into 'India District Boundary'
-[http://geocommons.com/users/SolomonNJ/overlays?order=desc&sort=created](http://geocommons.com/users/SolomonNJ/overlays?order=desc&sort=created)
-
-3. Pre-rendered svg available from [https://gramener.com/indiamap/](https://gramener.com/indiamap/)  
-`This is an interactive tool that lets you plot a colour against each district in India.`
-
-4. Uploaded to google group 'datameet' by Arun Ganesh  
-[https://groups.google.com/forum/#!topic/datameet/X5kzViRMJKs](https://groups.google.com/forum/#!topic/datameet/X5kzViRMJKs)  
-`I got some errors while processing the census data. I have made a combined shapefile with the natural earth data.`  
-
-5. India district map. disticts.svg
-From: [http://www.s-anand.net/blog/india-district-map/](http://www.s-anand.net/blog/india-district-map/)  
-`districts.svg has has 640 districts (I've no idea what the 641st looks like) and is tagged with the State and District names as titles`  
-`I made it from the 2011 census map (0.4MB PDF). I opened it in Inkscape, removed the labels, added a layer for the districts, and used the paint bucket to fill each district's area. I then saved the districts layer, cleaning it up a big. Then I labelled each district with a title. (Seemed like the easiest way to get this done.)`  
-[2011 census map 0.4MB PDF](http://www.censusindia.gov.in/2011census/maps/maps2011.html)
-
-Alternative shapefiles showing Indian states but not districts available from:  
-
-1. [Natural Earth](http://www.naturalearthdata.com/downloads/10m-cultural-vectors/)  
-  
-2. [Maptell](http://www.maptell.com/index.php?option=com_remository&Itemid=159&func=selectfolder&cat=6)  
- 
-
-### Convert shapefile to topojson format
-(If you're working on a mac) use [homebrew](http://brew.sh/) to install gdal and topojson
-
-You may need to update homebrew first:
-
-	brew update  
-
-then:  
-
-	brew install gdal  
-
-then:  
-	
-	npm install -g topojson  
-
-#### First convert shape file to geojson
-
-	ogr2ogr \  
-		-f GeoJSON \  
-		india.json \  
-		IND_adm2.shp
-
-#### Then convert the resulting geojson file to topojson
-
-	topojson \  
-  		-o india-topo.json \  
-  		india.json \  
-
-###Notes
-the shapefiles from gadm.org seem to be based on census 2001, since 
-they contain (on cursory examination) to have details for around 593 
-districts. There are around 640 districts as of census 2011. 
+| Name  |  Replacement |
+| ---- | ---- |
+| Paschim Champaran  |  No DATA |
+| Purba Champaran  |  East Champaran  |
+| Kaimur (Bhabua)  |  Kaimur |
+| Dharbanga  |  Darbhanga |
+| "Madhopura =	"  |  Madhepura |
+| Vaishali  |  NO DATA |
+| Hazaribagh  |  Hazaribag |
+| Kodarma  |  Koderma |
+| Saraikela-Kharsawan  |  Seraikela Kharsawan |
+| Purbi Singhbhum  |  East Singhbhum |
+| Paschimi Singhbhum  |  West Singhbhum |
+| Puruliya  |  Purulia |
+| Barddhaman  |  Bardhaman |
+| North Twenty Four Parganas  |  North 24 Parganas |
+| South Twenty Four Parganas  |  South 24 Parganas  |
+| Hugli  |  Hooghly |
+| Haora  |  Howrah |
+| Darjiling  |  Darjeeling |
+| Koch Bihar  |  Cooch Behar |
+| West District  |  West Sikkim  |
+| North District  |  North Sikkim  |
+| East District  |  East Sikkim  |
+| South District  |  South Sikkim  |
+| Sivasagar  |  Sibsagar |
+| Morigaon  |  Marigaon |
+| Leh (Ladakh)  |  Leh |
+| Rajouri  |  Rajauri |
+| Punch  |  Poonch |
+| Baramula  |  Baramulla |
+| Bandipore  |  Bandipora |
+| Shupiyan  |  Shopian |
+| Lahul & Spiti  |  Lahaul and Spiti |
+| SAS Nagar  |  Ajitgarh (Mohali) |
+| Muktsar  |  Sri Muktsar Sahib |
+| SBS Nagar  |  Shahid Bhagat Singh Nagar |
+| Yamunanagar  |  Yamuna Nagar |
+| Hisar  |  Hissar |
+| Uttarakshi  |  Uttarkashi |
+| Garhwal  |  Pauri Garhwal |
+| Hardwar  |  Haridwar |
+| Jhunhjunun  |  Jhunjhunu |
+| Dhaulpur  |  Dholpur |
+| Chittaurgarh  |  Chittorgarh |
+| Dungarpur  |  Dungapur |
+| Jalor  |  Jalore |
+| Nagaru  |  Nagaur |
+| Ahmadabad  |  Ahmedabad  |
+| Amreli  |  Amreli district |
+| Banas Kantha  |  Banaskantha |
+| Sabar Kantha  |  Sabarkantha |
+| Panch Mahals  |  Panchmahal |
+| Dohad  |  Dahod |
+| Vadadora  |  Vadodara |
+| Mahesana  |  Mehsana |
+| Kachchh  |  Kutch |
+| Sindhugurg  |  Sindhudurg |
+| Mumbai Suburban  |  Mumbai suburban  |
+| Mumbai  |  Mumbai City |
+| Buldana  |  Buldhana |
+| Gondiya  |  Gondia  |
+| Ahmadnagar  |  Ahmednagar |
+| Jaina  |  Jalna |
+| Bid  |  Beed |
+| Chikkaballapura  |  Chikkaballapur |
+| Bangalore  |  Bangalore Urban |
+| Chamarajanagar  |  Chamarajnagar |
+| Haveri  |  Haveri district |
+| Chikmagalur  |  Chikkamagaluru |
+| Visakhapatnam  |  Vishakhapatnam |
+| Sri Potti Sriramulu Nellore  |  Sri Potti Sri Ramulu Nellore |
+| Rangareddi  |  Ranga Reddy  |
+| Y.S.R.  |  Cudappah |
+| Thiruvallur  |  Tiruvallur |
+| Kancheepuram  |  Kanchipuram |
+| Thiruvarur  |  Tiruvarur |
+| Thoothukkudi  |  Thoothukudi |
+| Kanniyakumari  |  Kanyakumari |
+| Dingugul  |  Dindigul |
+| Tiruppur  |  Tirupur |
+| The Nilgiris  |  Nilgiris |
+| Tiruchinappalli  |  Tiruchirappalli |
+| Sivagangai  |  Sivaganga |
+| Kasargod  |  Kasaragod |
+| Pathanarothitta  |  Pathanamthitta |
+| Nabarangapur  |  Nabarangpur |
+| Bargarh  |  Bargarh (Baragarh) |
+| Sundargarh  |  Sundergarh NO DATA |
+| Kendujhar  |  Kendujhar (Keonjhar) |
+| Baleshwar  |  Balasore |
+| Jagatsinghapur  |  Jharsuguda |
+| Subarnapur  |  Subarnapur (Sonepur) |
+| Debagarh  |  Debagarh (Deogarh) |
+| Anugul  |  Angul |
+| Jajapur  |  Jajpur |
+| Baudh  |  Boudh (Bauda) |
+| Dakshin Bastar Dantewada  |  Dantewada  |
+| Uttar Bastar Kanker  |  Kanker |
+| Kabeerdham  |  Kabirdham (formerly Kawardha)  |
+| Janjgir - Champa  |  Janjgir-Champa  |
+| Ashoknagar  |  Ashok Nagar |
+| East Nimar  |  Khandwa (East Nimar) |
+| West Nimar  |  Khargone (West Nimar) |
+| Narsimhapur  |  Narsinghpur |
+| GBN Faridabad  |  Gautam Buddh Nagar |
+| Baghpat  |  Bagpat |
+| Phule   |  NO DATA part of Jyotiba Phule Nagar |
+| Kheri  |  Lakhimpur Kheri |
+| Shrawasti  |  Shravasti |
+| Mahraganj  |  Maharajganj |
+| Chandraili  |  Chandauli |
+| Kanpur Dehat  |  Ramabai Nagar (Kanpur Dehat) |
+| Mahamaya Nagar  |  Hathras |
+| Kanshiram Nagar  |  Kanshi Ram Nagar  |
+| Jyotiba Nagar  |  Jyotiba Phule Nagar |
+| Kanpur Nagar  |  Kanpur |
+| Bara Banki  |  Barabanki |
+| SKN  |  Sant Kabir Nagar |
+| Jaunpur  |  Jaunpur district |
+| SRNB  |  Sant Ravidas Nagar |
+| Rae Bareli  |  Raebareli |
+| North and Middle Andaman  |  North and Middle Andaman |
+| South West  |  Delhi |
+| West  |  Delhi |
+| North West  |  Delhi |
+| North  |  Delhi |
+| North East  |  Delhi |
+| East  |  Delhi |
+| South  |  Delhi |
+| Central  |  Delhi |
+| PoK  |  Pakistan-occupied Kashmir NO DATA |
