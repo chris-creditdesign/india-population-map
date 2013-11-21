@@ -1,6 +1,6 @@
 /* Colours from colourbrewer http://colorbrewer2.org/ */
 var colourScale = d3.scale.linear()
-					.domain([100, 200, 300, 400, 500, 600, 700, 800, 900])
+					.domain([100, 200, 300, 400, 500, 600, 700, 800, 900,1000,1100])
 					.range([	"#F7F4F9",
 								"#E7E1EF",
 								"#D4B9DA",
@@ -9,7 +9,9 @@ var colourScale = d3.scale.linear()
 								"#E7298A",
 								"#CE1256",
 								"#980043",
-								"#67001F"])
+								"#67001F",
+								"#3b0113",
+								"#19010A"])
 					.clamp(true);
 
 /*	Arrays to store all the data */
@@ -19,7 +21,7 @@ var	wikiData = [];
 var svg = d3.select("body")
 				.append("svg");
 
-d3.xml("sanand0-districts-5fc7249661ec/districts.svg", function (data) {
+d3.xml("svg/districts-edit.svg", function (data) {
 	var numberOfDistricts = d3.select(data).selectAll("path")[0].length;
 		
 	dataSet = d3.select(data).selectAll("path")[0];
@@ -107,8 +109,7 @@ d3.xml("sanand0-districts-5fc7249661ec/districts.svg", function (data) {
                         with a value of zero and log the title for debugging */
 					if (svgData[p].value === undefined) {
 						svgData[p].value = 0;
-						// console.log(svgData[p].title);
-						// console.log("does not match up!");
+						console.log(svgData[p].title + "does not match up!");
                     }
 				}
 
@@ -121,11 +122,6 @@ d3.xml("sanand0-districts-5fc7249661ec/districts.svg", function (data) {
 				var maxPop = d3.max(svgData, function (d) {
 					return d.value;
 				});
-
-
-				console.log("svgData is: " + svgData.length);
-				console.log("wikiData is: " + wikiData.length);
-
 
 				/*	At this point svgData now exists as an array of objects 
 					each with a 'title' and a 'path' and value
