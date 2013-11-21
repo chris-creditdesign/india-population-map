@@ -153,12 +153,12 @@ The amends are listed in `mismatches.csv` and also below.
 | SRNB  |  Sant Ravidas Nagar |
 | Rae Bareli  |  Raebareli |
 | North and Middle Andaman  |  North and Middle Andaman |
-| South West  |  Delhi |
-| West  |  Delhi |
-| North West  |  Delhi |
-| North  |  Delhi |
-| North East  |  Delhi |
-| East  |  Delhi |
-| South  |  Delhi |
-| Central  |  Delhi |
+| South West  |  South West Delhi |
+| West  |  West Delhi |
+| North West  |  North West Delhi |
+| North  |  North Delhi |
+| North East  |  North East Delhi |
+| East  |  East Delhi |
+| South  |  South Delhi |
+| Central  |  Central Delhi |
 | PoK  |  Pakistan-occupied Kashmir NO DATA |
